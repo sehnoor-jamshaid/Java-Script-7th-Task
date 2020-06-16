@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+.slider
+{width:1365px;
+height:400px;
+overflow: hidden;
+margin-top:100px;
+
+position: relative;
+
+background-color: salmon;
+
+}
+.all-slides
+{
+ width:6825px;
+height:400px;
+display:flex;
+}
+
+.slide
+{
+width:1365px;
+height: 400px;
+transition: 0.3s ;
+}
+.slide img
+{
+    width:100%;
+    height:100%;
+}
+.left-arrow,.right-arrow
+{
+    width:60px;
+    height:400px;
+    position: absolute;
+top:0px;
+transition:0.3s;
+}
+.left-arrow
+{
+left:0;
+}
+.right-arrow
+{
+right:-30px;
+}
+.left-arrow img,.right-arrow img
+{
+    width:50%;
+    margin-top:300%;
+}
+
+    </style>
+</head>
+<body>
+    <div class="slider">
+    <div class="all-slides">
+<div class="slide">
+    <img src="img-1/6.png" alt=""></img>
+
+
+</div>
+
+<div class="slide">
+    <img src="img-1/5.png" alt=""></img>
+
+</div>
+
+<div class="slide">
+    <img src="img-1/2.png" alt=""></img>
+
+</div>
+
+<div class="slide">
+
+    <img src="img-1/3.png" alt=""></img>
+</div>
+<div class="slide">
+    <img src="img-1/4.png" alt=""></img>
+
+</div>
+<div class="left-arrow">
+<img src="img-1/arrow1.png" onclick ="leftClick()" alt=""></img>
+</div>
+
+<div class="right-arrow">
+    <img src="img-1/arrow2.png" onclick ="rightClick()" alt=""></img>
+</div>
+
+    </div>
+
+<script>
+ var value=document.getElementsByClassName("slide");
+ console.log(value);
+        var index=0;
+function leftClick(){
+if(index==0){
+    console.log(index);
+index=value.length-1;
+console.log(index);
+}
+else{
+
+    index--;
+}
+value[0].style.marginLeft="-"+index*1365+"px";
+console.log(value[0]);
+console.log("+"+index*1365+"px");
+
+
+}
+function rightClick(){
+
+    if(index==value.length-1){
+
+index=0;
+
+}
+else{
+
+    index++;
+}
+value[0].style.marginLeft="-"+index*1365+"px";
+console.log("+"+index*1365+"px");
+
+
+
+}
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+    </div>
+</body>
+</html>
